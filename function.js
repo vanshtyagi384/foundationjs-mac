@@ -1,5 +1,10 @@
-greet("Hitesh")
-greet("Piyush")
+function greet(name){
+    console.log(`Hello ${name}`);
+    
+}
+
+//greet("Hitesh")
+//greet("Piyush")
 
 
 
@@ -10,7 +15,7 @@ let globalVar = "I am a global variable"
 
 function modifyGlobal(){
     globalVar = "i am modified"
-    let blockscopedVar = "i am blocked-scoped"
+    let blockScopedVar = "i am blocked-scoped"
     console.log(blockScopedVar);
     
 }
@@ -33,5 +38,12 @@ let person1 ={
         console.log(`Hello ${this.name}`);
     }
 }
-context 
 
+
+let person2 = {
+    name: "hitesh"
+
+}
+
+const bindGreet = person1.greet.bind(person2);
+console.log(bindGreet());
